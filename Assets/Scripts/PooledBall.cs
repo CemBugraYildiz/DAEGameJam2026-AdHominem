@@ -61,7 +61,12 @@ public class PooledBall : MonoBehaviour
     {
         if (!isActive) return;
 
-        transform.position += moveDirection * moveSpeed * Time.deltaTime;
+        float currentSpeed = moveSpeed;
+
+        if (ownerPool != null)
+            currentSpeed = ownerPool.GetCurrentMoveSpeed();
+
+        transform.position += moveDirection * currentSpeed * Time.deltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -71,24 +76,28 @@ public class PooledBall : MonoBehaviour
         if (!other.TryGetComponent<PlayerIdentity>(out var player))
             return;
 
-        ScoreManager.Instance.AddScore(this.Kind);
-
         if (kind == BallKind.Good)
         {
-            if (player.Color != targetColor)
+            if (player.Color == targetColor)
+            {
+                Debug.Log($"{player.Color} player collected GOOD ball");
+                ScoreManager.Instance.AddScore(BallKind.Good);
+                ReturnToPool();
+            }
+
+            else
+            {
                 return;
-
-            Debug.Log($"{player.Color} player collected GOOD ball");
-
-
-            ReturnToPool();
+            }
         }
         else if (kind == BallKind.Bad)
         {
             Debug.Log($"{player.Color} player hit BAD ball");
-
+            ScoreManager.Instance.AddScore(BallKind.Bad);
             ReturnToPool();
         }
+
+        
     }
 
     public void ReturnToPool()

@@ -5,8 +5,8 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance { get; private set; }
 
-    [SerializeField] private TMP_Text goodScoreText;
-    [SerializeField] private TMP_Text badScoreText;
+    //[SerializeField] private TMP_Text goodScoreText;
+    //[SerializeField] private TMP_Text badScoreText;
 
     public int GoodScore { get; private set; }
     public int BadScore { get; private set; }
@@ -19,7 +19,7 @@ public class ScoreManager : MonoBehaviour
         }
 
         Instance = this;
-        UpdateUI();
+        //UpdateUI();
     }
 
     public void AddScore(BallKind ballType)
@@ -35,17 +35,17 @@ public class ScoreManager : MonoBehaviour
             ScoreMeter.Instance?.AddBadBall();
         }
 
-        UpdateUI();
+        //UpdateUI();
         Debug.Log($"Good: {GoodScore} | Bad: {BadScore} | Balance: {ScoreMeter.Instance.GetCurrentValue()}");
 
     }
 
-    private void UpdateUI()
-    {
-        if (goodScoreText != null)
-            goodScoreText.text = $"Good: {GoodScore}";
+    //private void UpdateUI()
+    //{
+    //    if (goodScoreText != null)
+    //        goodScoreText.text = $"Good: {GoodScore}";
 
-        if (badScoreText != null)
-            badScoreText.text = $"Bad: {BadScore}";
-    }
+    //    if (badScoreText != null)
+    //        badScoreText.text = $"Bad: {BadScore}";
+    //}
 }
