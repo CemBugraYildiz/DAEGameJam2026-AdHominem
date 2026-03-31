@@ -169,3 +169,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d2af3ce33f813f43b9948a3431eb38a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  spriteRenderer: {fileID: 2316238916479225898}
+  badBallColor: {r: 0, g: 0, b: 0, a: 1}

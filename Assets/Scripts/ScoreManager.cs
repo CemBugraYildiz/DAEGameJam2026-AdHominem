@@ -22,16 +22,22 @@ public class ScoreManager : MonoBehaviour
         UpdateUI();
     }
 
-    public void AddScore(BallType ballType)
+    public void AddScore(BallKind ballType)
     {
-        if (ballType == BallType.Good)
+        if (ballType == BallKind.Good)
+        {
             GoodScore++;
+            ScoreMeter.Instance?.AddGoodBall();
+        }
         else
+        {
             BadScore++;
+            ScoreMeter.Instance?.AddBadBall();
+        }
 
         UpdateUI();
+        Debug.Log($"Good: {GoodScore} | Bad: {BadScore} | Balance: {ScoreMeter.Instance.GetCurrentValue()}");
 
-        Debug.Log($"Good: {GoodScore} | Bad: {BadScore}");
     }
 
     private void UpdateUI()
