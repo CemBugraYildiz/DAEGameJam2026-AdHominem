@@ -75,7 +75,7 @@ public class ScenePlayerJoinManager : MonoBehaviour
         for (int i = count; i < scenePlayers.Length; i++)
         {
             if (scenePlayers[i] != null)
-                Debug.Log($"{scenePlayers[i].gameObject.name} pasif býrakýldý.");
+                Debug.Log($"{scenePlayers[i].gameObject.name} is empty");
         }
     }
 
@@ -86,23 +86,8 @@ public class ScenePlayerJoinManager : MonoBehaviour
         for (int i = 0; i < scenePlayers.Length; i++)
         {
             var player = scenePlayers[i];
-
-            if (player == null)
-            {
-                Debug.LogError($"scenePlayers[{i}] boþ. Hierarchy'deki player instance'ýný atamalýsýn.");
-                continue;
-            }
-
             int id = player.GetInstanceID();
 
-            if (!ids.Add(id))
-            {
-                Debug.LogError(
-                    $"scenePlayers[{i}] ayný referansý tekrar kullanýyor: {player.gameObject.name}\n" +
-                    "Muhtemelen ayný objeyi birden fazla kez ekledin ya da prefab assetini sürükledin.\n" +
-                    "Project panelinden deðil, Hierarchy'den sahnedeki instance'larý ekle."
-                );
-            }
         }
     }
 }
