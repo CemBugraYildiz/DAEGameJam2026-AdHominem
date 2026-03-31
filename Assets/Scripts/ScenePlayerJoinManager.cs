@@ -1,78 +1,108 @@
-using System.Linq;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.LowLevel;
-using UnityEngine.InputSystem.Users;
 
 public class ScenePlayerJoinManager : MonoBehaviour
 {
     [SerializeField] private PlayerInput[] scenePlayers;
 
-    private void Awake()
+    private IEnumerator Start()
     {
-        foreach (var player in scenePlayers)
-        {
-            player.DeactivateInput();
-            player.user.UnpairDevices();
-        }
+        yield return null;
+
+        ValidateScenePlayers();
+        RebuildAssignments();
     }
 
     private void OnEnable()
     {
-        InputUser.listenForUnpairedDeviceActivity++;
-        InputUser.onUnpairedDeviceUsed += OnUnpairedDeviceUsed;
+        InputSystem.onDeviceChange += OnDeviceChange;
     }
 
     private void OnDisable()
     {
-        InputUser.listenForUnpairedDeviceActivity--;
-        InputUser.onUnpairedDeviceUsed -= OnUnpairedDeviceUsed;
+        InputSystem.onDeviceChange -= OnDeviceChange;
     }
 
-    private void OnUnpairedDeviceUsed(InputControl control, InputEventPtr eventPtr)
+    private void OnDeviceChange(InputDevice device, InputDeviceChange change)
     {
-        if (control.device is not Gamepad gamepad)
+        if (device is not Gamepad)
             return;
 
-        if (control != gamepad.buttonSouth)
-            return;
-
-        if (IsGamepadAlreadyAssigned(gamepad))
-            return;
-
-        PlayerInput freePlayer = GetFirstFreePlayer();
-
-        if (freePlayer == null)
+        switch (change)
         {
-            Debug.Log("No Empty Space.");
-            return;
+            case InputDeviceChange.Added:
+            case InputDeviceChange.Removed:
+            case InputDeviceChange.Disconnected:
+            case InputDeviceChange.Reconnected:
+                RebuildAssignments();
+                break;
         }
-
-        freePlayer.SwitchCurrentControlScheme("Gamepad", gamepad);
-        freePlayer.ActivateInput();
-
-        Debug.Log($"{gamepad.displayName} -> {freePlayer.gameObject.name} connected");
     }
 
-    private bool IsGamepadAlreadyAssigned(Gamepad gamepad)
+    [ContextMenu("Rebuild Assignments")]
+    private void RebuildAssignments()
     {
         foreach (var player in scenePlayers)
         {
-            if (player.devices.Contains(gamepad))
-                return true;
+            if (player == null)
+                continue;
+
+            player.neverAutoSwitchControlSchemes = true;
+            player.DeactivateInput();
+
+            if (player.user.valid)
+                player.user.UnpairDevices();
         }
 
-        return false;
+        int count = Mathf.Min(Gamepad.all.Count, scenePlayers.Length);
+
+        for (int i = 0; i < count; i++)
+        {
+            var player = scenePlayers[i];
+            var gamepad = Gamepad.all[i];
+
+            if (player == null || gamepad == null)
+                continue;
+
+            player.ActivateInput();
+            player.SwitchCurrentControlScheme("Gamepad", gamepad);
+
+            Debug.Log($"{gamepad.displayName} -> {player.gameObject.name}");
+        }
+
+        for (int i = count; i < scenePlayers.Length; i++)
+        {
+            if (scenePlayers[i] != null)
+                Debug.Log($"{scenePlayers[i].gameObject.name} pasif býrakýldý.");
+        }
     }
 
-    private PlayerInput GetFirstFreePlayer()
+    private void ValidateScenePlayers()
     {
-        foreach (var player in scenePlayers)
-        {
-            if (player.devices.Count == 0)
-                return player;
-        }
+        HashSet<int> ids = new HashSet<int>();
 
-        return null;
+        for (int i = 0; i < scenePlayers.Length; i++)
+        {
+            var player = scenePlayers[i];
+
+            if (player == null)
+            {
+                Debug.LogError($"scenePlayers[{i}] boþ. Hierarchy'deki player instance'ýný atamalýsýn.");
+                continue;
+            }
+
+            int id = player.GetInstanceID();
+
+            if (!ids.Add(id))
+            {
+                Debug.LogError(
+                    $"scenePlayers[{i}] ayný referansý tekrar kullanýyor: {player.gameObject.name}\n" +
+                    "Muhtemelen ayný objeyi birden fazla kez ekledin ya da prefab assetini sürükledin.\n" +
+                    "Project panelinden deðil, Hierarchy'den sahnedeki instance'larý ekle."
+                );
+            }
+        }
     }
 }

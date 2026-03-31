@@ -186,7 +186,7 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9dc057fb4373a642a2091dd1b104ea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  jumpForce: 7
+  jumpForce: 8
   groundCheck: {fileID: 6434889136046251944}
   groundCheckRadius: 0.15
   groundLayer:
