@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 8919be942f76dc24b85fdfea780e2ece
+guid: 6fc2b5199e6791d4c8adc6651a463b95
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6116589324783389419
-    second: Head_Render 1_0
+      213: -7193543884418781829
+    second: Head_Render(2)_0
+  - first:
+      213: -4011596135750310457
+    second: Head_Render(2)_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Head_Render 1_0
+      name: Head_Render(2)_0
       rect:
         serializedVersion: 2
-        x: 48
+        x: 98
         y: 0
-        width: 988
-        height: 1060
+        width: 936
+        height: 1058
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bea09a4759d72e450800000000000000
-      internalID: 6116589324783389419
+      spriteID: b7de80d33f56b2c90800000000000000
+      internalID: -7193543884418781829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Render(2)_1
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 454
+        width: 19
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c5e542a192f358c0800000000000000
+      internalID: -4011596135750310457
       vertices: []
       indices: 
       edges: []
@@ -148,7 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Head_Render 1_0: 6116589324783389419
+      Head_Render(2)_0: -7193543884418781829
+      Head_Render(2)_1: -4011596135750310457
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
