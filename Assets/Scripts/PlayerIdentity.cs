@@ -22,7 +22,7 @@ public class PlayerIdentity : MonoBehaviour
             if (playerInput == null)
                 return gameObject.activeInHierarchy;
 
-            return playerInput.inputIsActive && playerInput.devices.Count > 0;
+            return playerInput.user.valid && playerInput.devices.Count > 0;
         }
     }
 

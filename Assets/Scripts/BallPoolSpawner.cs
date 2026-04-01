@@ -43,6 +43,8 @@ public class BallPoolSpawner : MonoBehaviour
     private readonly Queue<PooledBall> goodPool = new();
     private readonly Queue<PooledBall> badPool = new();
 
+    private readonly List<PooledBall> allBalls = new();
+
     private Coroutine spawnRoutine;
     private Transform poolParent;
     private float spawnerStartTime;
@@ -53,6 +55,7 @@ public class BallPoolSpawner : MonoBehaviour
         {
             GameObject poolObj = new GameObject("BallPool");
             poolParent = poolObj.transform;
+            poolParent.SetParent(transform, false);
         }
 
         PrewarmPool(goodBallPrefab, initialGoodBallCount, goodPool);
@@ -61,14 +64,12 @@ public class BallPoolSpawner : MonoBehaviour
 
     private void OnEnable()
     {
-        spawnerStartTime = Time.time;
-        spawnRoutine = StartCoroutine(SpawnRoutine());
+        StartSpawning();
     }
 
     private void OnDisable()
     {
-        if (spawnRoutine != null)
-            StopCoroutine(spawnRoutine);
+        StopAndClearAll();
     }
 
     private IEnumerator SpawnRoutine()
@@ -154,6 +155,7 @@ public class BallPoolSpawner : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             PooledBall ball = Instantiate(prefab, poolParent);
+            allBalls.Add(ball);
             ball.Initialize(this);
             ball.gameObject.SetActive(false);
             pool.Enqueue(ball);
@@ -166,6 +168,7 @@ public class BallPoolSpawner : MonoBehaviour
             return pool.Dequeue();
 
         PooledBall newBall = Instantiate(prefab, poolParent);
+        allBalls.Add(newBall);
         newBall.Initialize(this);
         newBall.gameObject.SetActive(false);
         return newBall;
@@ -216,5 +219,27 @@ public class BallPoolSpawner : MonoBehaviour
 
         if (difficultyRampDuration < 0f)
             difficultyRampDuration = 0f;
+    }
+
+    public void StartSpawning()
+    {
+        StopAndClearAll();
+        spawnerStartTime = Time.time;
+        spawnRoutine = StartCoroutine(SpawnRoutine());
+    }
+
+    public void StopAndClearAll()
+    {
+        if (spawnRoutine != null)
+        {
+            StopCoroutine(spawnRoutine);
+            spawnRoutine = null;
+        }
+
+        foreach (var ball in allBalls)
+        {
+            if (ball != null && ball.gameObject.activeSelf)
+                ball.ReturnToPool();
+        }
     }
 }

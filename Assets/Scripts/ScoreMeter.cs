@@ -82,4 +82,32 @@ public class ScoreMeter : MonoBehaviour
     }
 
     public float GetCurrentValue() => currentValue;
+
+    public float GetNormalized01()
+    {
+        return Mathf.InverseLerp(minValue, maxValue, currentValue);
+    }
+
+    public bool IsInLeftThird()
+    {
+        return GetNormalized01() < 1f / 3f;
+    }
+
+    public bool IsInCenterThird()
+    {
+        float n = GetNormalized01();
+        return n >= 1f / 3f && n < 2f / 3f;
+    }
+
+    public bool IsInRightThird()
+    {
+        return GetNormalized01() >= 2f / 3f;
+    }
+
+    public void ResetMeter()
+    {
+        currentValue = 0f;
+        targetValue = 0f;
+        UpdateVisuals();
+    }
 }

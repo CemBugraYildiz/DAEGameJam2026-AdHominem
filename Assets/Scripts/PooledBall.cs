@@ -87,7 +87,6 @@ public class PooledBall : MonoBehaviour
                 Debug.Log($"{player.Color} player collected GOOD ball");
                 ScoreManager.Instance.AddScore(BallKind.Good);
 
-                // for audio clip
                 if (SoundFXManager.Instance != null)
                 {
                     SoundFXManager.Instance.PlayRandomSoundFXClip(ballClips, ballSoundVolume);
