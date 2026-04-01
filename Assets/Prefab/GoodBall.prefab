@@ -171,3 +171,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   spriteRenderer: {fileID: 2316238916479225898}
   badBallColor: {r: 0, g: 0, b: 0, a: 1}
+  ballClips:
+  - {fileID: 8300000, guid: dabeb418526c3fa4ea30ea4b701d788b, type: 3}
+  - {fileID: 8300000, guid: a911d0bde0a62904bbea0d3c2d3b8407, type: 3}
+  - {fileID: 8300000, guid: 7cb77e8f4558ec143bdc25081c2c2492, type: 3}
+  ballSoundVolume: 1

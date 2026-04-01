@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -17,6 +18,8 @@ public class SpeechBubbleProgressTimer : MonoBehaviour
     [Header("End Screens")]
     [SerializeField] private GameObject winScreen;
     [SerializeField] private GameObject loseScreen;
+    [SerializeField] private Selectable winScreenFirstButton;
+    [SerializeField] private Selectable loseScreenFirstButton;
     //[SerializeField] private GameObject timeOutObject; 
 
     [Header("Players")]
@@ -209,6 +212,12 @@ public class SpeechBubbleProgressTimer : MonoBehaviour
         if (winScreen != null)
         {
             winScreen.SetActive(true);
+
+            if (winScreenFirstButton != null && EventSystem.current != null)
+            {
+                EventSystem.current.SetSelectedGameObject(null);
+                winScreenFirstButton.Select();
+            }
         }
     }
 
@@ -217,6 +226,12 @@ public class SpeechBubbleProgressTimer : MonoBehaviour
         if (loseScreen != null)
         {
             loseScreen.SetActive(true);
+
+            if (loseScreenFirstButton != null && EventSystem.current != null)
+            {
+                EventSystem.current.SetSelectedGameObject(null);
+                loseScreenFirstButton.Select();
+            }
         }
     }
 
