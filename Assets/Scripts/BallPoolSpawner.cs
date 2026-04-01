@@ -21,13 +21,18 @@ public class BallPoolSpawner : MonoBehaviour
     [SerializeField] private float minSpawnDelay = 0.75f;
     [SerializeField] private float maxSpawnDelay = 1.5f;
 
+    [Header("Difficulty Scaling")]
+    [SerializeField] private float targetMoveSpeed = 8f;
+    [SerializeField] private float targetMinSpawnDelay = 0.25f;
+    [SerializeField] private float targetMaxSpawnDelay = 0.60f;
+    [SerializeField] private float difficultyRampDuration = 60f;
+
     [Range(0f, 1f)]
     [SerializeField] private float goodBallChance = 0.75f;
 
     [Header("Pool")]
     [SerializeField] private int initialGoodBallCount = 12;
     [SerializeField] private int initialBadBallCount = 8;
-    
 
     [Header("Ball Colors")]
     [SerializeField] private Color redBallColor = Color.red;
@@ -40,6 +45,7 @@ public class BallPoolSpawner : MonoBehaviour
 
     private Coroutine spawnRoutine;
     private Transform poolParent;
+    private float spawnerStartTime;
 
     private void Awake()
     {
@@ -55,6 +61,7 @@ public class BallPoolSpawner : MonoBehaviour
 
     private void OnEnable()
     {
+        spawnerStartTime = Time.time;
         spawnRoutine = StartCoroutine(SpawnRoutine());
     }
 
@@ -70,14 +77,28 @@ public class BallPoolSpawner : MonoBehaviour
 
         while (true)
         {
-            SpawnRandomBall();
+            float difficulty01 = GetDifficulty01();
 
-            float waitTime = Random.Range(minSpawnDelay, maxSpawnDelay);
+            float currentMoveSpeed = Mathf.Lerp(moveSpeed, targetMoveSpeed, difficulty01);
+            float currentMinDelay = Mathf.Lerp(minSpawnDelay, targetMinSpawnDelay, difficulty01);
+            float currentMaxDelay = Mathf.Lerp(maxSpawnDelay, targetMaxSpawnDelay, difficulty01);
+
+            SpawnRandomBall(currentMoveSpeed);
+
+            float waitTime = Random.Range(currentMinDelay, currentMaxDelay);
             yield return new WaitForSeconds(waitTime);
         }
     }
 
-    private void SpawnRandomBall()
+    private float GetDifficulty01()
+    {
+        if (difficultyRampDuration <= 0f)
+            return 1f;
+
+        return Mathf.Clamp01((Time.time - spawnerStartTime) / difficultyRampDuration);
+    }
+
+    private void SpawnRandomBall(float currentMoveSpeed)
     {
         List<PlayerIdentity> activePlayers = GetActivePlayers();
 
@@ -95,7 +116,7 @@ public class BallPoolSpawner : MonoBehaviour
             ball.SpawnGood(
                 spawnPoint.position,
                 direction,
-                moveSpeed,
+                currentMoveSpeed,
                 targetPlayer.Color,
                 GetColorFromPlayerColor(targetPlayer.Color)
             );
@@ -103,7 +124,7 @@ public class BallPoolSpawner : MonoBehaviour
         else
         {
             PooledBall ball = GetBallFromPool(badPool, badBallPrefab);
-            ball.SpawnBad(spawnPoint.position, direction, moveSpeed);
+            ball.SpawnBad(spawnPoint.position, direction, currentMoveSpeed);
         }
     }
 
@@ -171,5 +192,29 @@ public class BallPoolSpawner : MonoBehaviour
             PlayerColor.Yellow => yellowBallColor,
             _ => Color.white
         };
+    }
+
+    public float GetCurrentMoveSpeed()
+    {
+        float difficulty01 = 0f;
+
+        if (difficultyRampDuration > 0f)
+            difficulty01 = Mathf.Clamp01((Time.time - spawnerStartTime) / difficultyRampDuration);
+        else
+            difficulty01 = 1f;
+
+        return Mathf.Lerp(moveSpeed, targetMoveSpeed, difficulty01);
+    }
+
+    private void OnValidate()
+    {
+        if (maxSpawnDelay < minSpawnDelay)
+            maxSpawnDelay = minSpawnDelay;
+
+        if (targetMaxSpawnDelay < targetMinSpawnDelay)
+            targetMaxSpawnDelay = targetMinSpawnDelay;
+
+        if (difficultyRampDuration < 0f)
+            difficultyRampDuration = 0f;
     }
 }
