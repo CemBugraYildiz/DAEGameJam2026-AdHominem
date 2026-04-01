@@ -152,6 +152,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   playerAnim: {fileID: 5778085874884732497}
+  jumpClip: {fileID: 8300000, guid: 21729112f69fed344ac5fc9fda11b5cc, type: 3}
+  jumpSoundVolume: 0.5
 --- !u!114 &7597769612134338032
 MonoBehaviour:
   m_ObjectHideFlags: 0

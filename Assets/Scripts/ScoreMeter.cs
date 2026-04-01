@@ -23,6 +23,9 @@ public class ScoreMeter : MonoBehaviour
 
     private readonly Vector3[] corners = new Vector3[4];
 
+    public bool IsAtMax() => Mathf.Approximately(currentValue, maxValue);
+    public bool IsAtMin() => Mathf.Approximately(currentValue, minValue);
+
     private void Awake()
     {
         if (Instance == null) Instance = this;
