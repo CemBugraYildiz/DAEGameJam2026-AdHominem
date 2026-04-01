@@ -6,9 +6,10 @@ public class ScoreMeter : MonoBehaviour
     public static ScoreMeter Instance { get; private set; }
 
     [Header("References")]
-    [SerializeField] private Image leftRedBar;
-    [SerializeField] private Image rightBlueBar;
-    [SerializeField] private RectTransform indicator;
+    [SerializeField] private RectTransform fillTrack;
+    [SerializeField] private Image redBar;
+    [SerializeField] private Image blueBar;
+    [SerializeField] private RectTransform centerMarker;
 
     [Header("Settings")]
     [SerializeField] private float minValue = -100f;
@@ -19,18 +20,26 @@ public class ScoreMeter : MonoBehaviour
 
     private float currentValue = 0f;
     private float targetValue = 0f;
-    private RectTransform rectTransform;
+
+    private readonly Vector3[] corners = new Vector3[4];
 
     private void Awake()
     {
         if (Instance == null) Instance = this;
-
-        rectTransform = GetComponent<RectTransform>();
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
     }
 
     private void Update()
     {
         currentValue = Mathf.Lerp(currentValue, targetValue, Time.deltaTime * smoothSpeed);
+
+        if (Mathf.Abs(currentValue - targetValue) < 0.01f)
+            currentValue = targetValue;
+
         UpdateVisuals();
     }
 
@@ -46,22 +55,28 @@ public class ScoreMeter : MonoBehaviour
 
     private void UpdateVisuals()
     {
-        float normalized = (currentValue - minValue) / (maxValue - minValue);
+        float normalized = Mathf.InverseLerp(minValue, maxValue, currentValue);
 
-        leftRedBar.fillAmount = normalized;
+        if (redBar != null)
+            redBar.fillAmount = normalized;
 
-        rightBlueBar.fillAmount = 1f - normalized;
+        if (blueBar != null)
+            blueBar.fillAmount = 1f - normalized;
 
-        if (indicator != null)
+        if (fillTrack != null && centerMarker != null)
         {
-            float barWidth = rectTransform.rect.width;
-            float xPos = Mathf.Lerp(-barWidth * 0.5f, barWidth * 0.5f, normalized);
-            Vector2 pos = indicator.anchoredPosition;
-            pos.x = xPos;
-            indicator.anchoredPosition = pos;
+            fillTrack.GetWorldCorners(corners);
+
+            Vector3 leftMid = (corners[0] + corners[1]) * 0.5f;
+            Vector3 rightMid = (corners[3] + corners[2]) * 0.5f;
+
+            float targetX = Mathf.Lerp(leftMid.x, rightMid.x, normalized);
+
+            Vector3 pos = centerMarker.position;
+            pos.x = targetX;
+            centerMarker.position = pos;
         }
     }
 
     public float GetCurrentValue() => currentValue;
-
 }

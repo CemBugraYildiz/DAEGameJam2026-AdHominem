@@ -22,13 +22,13 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: -855298285791758126, guid: 5e46bf2bf6d7b194f81d6558547d3362, type: 3}
-    - time: 0.13333334
+    - time: 0.083333336
       value: {fileID: 6937817954938267909, guid: 3f86afd82006b684cb43773fd065c868, type: 3}
-    - time: 0.28333333
+    - time: 0.16666667
       value: {fileID: -6470460504253458178, guid: a61c22798a678de458e7fd90e96b3b05, type: 3}
-    - time: 0.41666666
+    - time: 0.25
       value: {fileID: 8982099749623107299, guid: 0b96b0a69afe2c7448e93c551a42c64b, type: 3}
-    - time: 0.56666666
+    - time: 0.33333334
       value: {fileID: -7200132072931614835, guid: 7d6d46e3d61de3a488b577109aadec9c, type: 3}
     attribute: m_Sprite
     path: 
@@ -62,7 +62,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5833333
+    m_StopTime: 0.35000002
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -82,7 +82,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.4
+  - time: 0.23333333
     functionName: JumpFromAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
