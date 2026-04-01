@@ -145,7 +145,7 @@ public class GameFlowManager : MonoBehaviour
         OpenAllPlayerInputs();
     }
 
-    private IEnumerator BeginJumpPhaseRoutine()
+    private IEnumerator BeginJumpPhaseRoutine(ExpressionState preJumpExpression)
     {
         currentPhase = GamePhase.TransitionToJump;
 
@@ -159,7 +159,7 @@ public class GameFlowManager : MonoBehaviour
             playerBubble.StopTimer();
 
         if (expressionController != null)
-            expressionController.Show(ExpressionState.Hurt);
+            expressionController.Show(preJumpExpression);
 
         yield return new WaitForSeconds(hurtExpressionDuration);
 
@@ -225,7 +225,7 @@ public class GameFlowManager : MonoBehaviour
         if (currentPhase != GamePhase.BallCollect)
             return;
 
-        StartCoroutine(BeginJumpPhaseRoutine());
+        StartCoroutine(BeginJumpPhaseRoutine(ExpressionState.Hurt));
     }
 
     private void HandlePlayerBubbleTimerExpired(BubbleProgressUI bubble)
@@ -233,7 +233,15 @@ public class GameFlowManager : MonoBehaviour
         if (currentPhase != GamePhase.BallCollect)
             return;
 
-        playerBubble?.ResetProgress(true);
+        if (bubble == null)
+            return;
+
+        ExpressionState nextExpression =
+            bubble.HasHalfOrMoreFilled()
+            ? ExpressionState.Hurt
+            : ExpressionState.NotHurt;
+
+        StartCoroutine(BeginJumpPhaseRoutine(nextExpression));
     }
 
     private void HandleNpcBubbleFilled(BubbleProgressUI bubble)

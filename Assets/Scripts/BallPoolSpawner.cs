@@ -47,7 +47,6 @@ public class BallPoolSpawner : MonoBehaviour
 
     private Coroutine spawnRoutine;
     private Transform poolParent;
-    private float spawnerStartTime;
 
     private void Awake()
     {
@@ -96,7 +95,12 @@ public class BallPoolSpawner : MonoBehaviour
         if (difficultyRampDuration <= 0f)
             return 1f;
 
-        return Mathf.Clamp01((Time.time - spawnerStartTime) / difficultyRampDuration);
+        float elapsed = 0f;
+
+        if (GlobalDifficultyDirector.Instance != null)
+            elapsed = GlobalDifficultyDirector.Instance.ElapsedTime;
+
+        return Mathf.Clamp01(elapsed / difficultyRampDuration);
     }
 
     private void SpawnRandomBall(float currentMoveSpeed)
@@ -199,13 +203,7 @@ public class BallPoolSpawner : MonoBehaviour
 
     public float GetCurrentMoveSpeed()
     {
-        float difficulty01 = 0f;
-
-        if (difficultyRampDuration > 0f)
-            difficulty01 = Mathf.Clamp01((Time.time - spawnerStartTime) / difficultyRampDuration);
-        else
-            difficulty01 = 1f;
-
+        float difficulty01 = GetDifficulty01();
         return Mathf.Lerp(moveSpeed, targetMoveSpeed, difficulty01);
     }
 
@@ -224,7 +222,6 @@ public class BallPoolSpawner : MonoBehaviour
     public void StartSpawning()
     {
         StopAndClearAll();
-        spawnerStartTime = Time.time;
         spawnRoutine = StartCoroutine(SpawnRoutine());
     }
 

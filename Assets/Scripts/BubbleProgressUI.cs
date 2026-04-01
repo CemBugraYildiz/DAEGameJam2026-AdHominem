@@ -26,6 +26,23 @@ public class BubbleProgressUI : MonoBehaviour
     public int CurrentCount => currentCount;
     public bool IsFull => Capacity > 0 && currentCount >= Capacity;
 
+    public bool HasHalfOrMoreFilled()
+    {
+        if (Capacity <= 0)
+            return false;
+
+        int halfThreshold = Mathf.CeilToInt(Capacity * 0.5f);
+        return currentCount >= halfThreshold;
+    }
+
+    public float GetFillRatio()
+    {
+        if (Capacity <= 0)
+            return 0f;
+
+        return (float)currentCount / Capacity;
+    }
+
     private void Awake()
     {
         BuildCollectedTexts();
@@ -145,4 +162,6 @@ public class BubbleProgressUI : MonoBehaviour
 
         return textSprites[index % textSprites.Length];
     }
+
+
 }

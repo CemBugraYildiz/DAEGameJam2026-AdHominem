@@ -17,6 +17,12 @@ public class JumpObstacleSpawner : MonoBehaviour
     [SerializeField] private float minSpawnDelay = 1f;
     [SerializeField] private float maxSpawnDelay = 2f;
 
+    [Header("Difficulty Scaling")]
+    [SerializeField] private float targetMoveSpeed = 8f;
+    [SerializeField] private float targetMinSpawnDelay = 0.4f;
+    [SerializeField] private float targetMaxSpawnDelay = 1.0f;
+    [SerializeField] private float difficultyRampDuration = 60f;
+
     [Header("Pool")]
     [SerializeField] private int initialCount = 10;
 
@@ -65,17 +71,24 @@ public class JumpObstacleSpawner : MonoBehaviour
 
         while (true)
         {
-            SpawnObstacle();
-            float wait = Random.Range(minSpawnDelay, maxSpawnDelay);
+            float difficulty01 = GetDifficulty01();
+
+            float currentMoveSpeed = Mathf.Lerp(moveSpeed, targetMoveSpeed, difficulty01);
+            float currentMinDelay = Mathf.Lerp(minSpawnDelay, targetMinSpawnDelay, difficulty01);
+            float currentMaxDelay = Mathf.Lerp(maxSpawnDelay, targetMaxSpawnDelay, difficulty01);
+
+            SpawnObstacle(currentMoveSpeed);
+
+            float wait = Random.Range(currentMinDelay, currentMaxDelay);
             yield return new WaitForSeconds(wait);
         }
     }
 
-    private void SpawnObstacle()
+    private void SpawnObstacle(float speed)
     {
         Vector3 direction = laneReference != null ? -laneReference.right : Vector3.left;
         JumpObstacle obstacle = GetFromPool();
-        obstacle.Spawn(spawnPoint.position, direction, moveSpeed);
+        obstacle.Spawn(spawnPoint.position, direction, speed);
     }
 
     private void PrewarmPool()
@@ -109,8 +122,22 @@ public class JumpObstacleSpawner : MonoBehaviour
         pool.Enqueue(obstacle);
     }
 
+    private float GetDifficulty01()
+    {
+        if (difficultyRampDuration <= 0f)
+            return 1f;
+
+        float elapsed = 0f;
+
+        if (GlobalDifficultyDirector.Instance != null)
+            elapsed = GlobalDifficultyDirector.Instance.ElapsedTime;
+
+        return Mathf.Clamp01(elapsed / difficultyRampDuration);
+    }
+
     public float GetCurrentMoveSpeed()
     {
-        return moveSpeed;
+        float difficulty01 = GetDifficulty01();
+        return Mathf.Lerp(moveSpeed, targetMoveSpeed, difficulty01);
     }
 }

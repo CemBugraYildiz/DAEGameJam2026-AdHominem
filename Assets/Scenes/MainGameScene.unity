@@ -3397,6 +3397,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 655379510}
   m_CullTransparentMesh: 1
+--- !u!1 &665125330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 665125332}
+  - component: {fileID: 665125331}
+  m_Layer: 0
+  m_Name: GlobalDifficulty
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &665125331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665125330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1877befdc5c4e3b448cba66279e23294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GlobalDifficultyDirector
+--- !u!4 &665125332
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665125330}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1485.2443, y: 684.28064, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &698439200
 GameObject:
   m_ObjectHideFlags: 0
@@ -4301,7 +4345,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &804994474
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4553,7 +4597,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2235d20377c3a2341b09f3c5cf213c72, type: 3}
   collectedColor: {r: 0, g: 0, b: 0, a: 1}
   bubbleTimerFillImage: {fileID: 1377262896}
-  duration: 10
+  duration: 20
 --- !u!1 &935351996
 GameObject:
   m_ObjectHideFlags: 0
@@ -4588,8 +4632,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: -88}
+  m_SizeDelta: {x: 910.1, y: 577}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &935351998
 MonoBehaviour:
@@ -4611,7 +4655,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8d450e09ba7faea4da1c76f5843530ec, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5758,6 +5802,10 @@ MonoBehaviour:
   firstSpawnDelay: 1
   minSpawnDelay: 1
   maxSpawnDelay: 2
+  targetMoveSpeed: 8
+  targetMinSpawnDelay: 0.4
+  targetMaxSpawnDelay: 1
+  difficultyRampDuration: 60
   initialCount: 10
 --- !u!1 &1237003145
 GameObject:
@@ -6112,7 +6160,7 @@ MonoBehaviour:
   maxValue: 100
   smoothSpeed: 7
   goodValuePerBall: 5
-  badValuePerBall: 40
+  badValuePerBall: 20
 --- !u!1 &1377262894
 GameObject:
   m_ObjectHideFlags: 0
@@ -6317,7 +6365,11 @@ MonoBehaviour:
   winning: {fileID: 2008954257}
   losing: {fileID: 1844788019}
   hurt: {fileID: 655379510}
+  notHurt: {fileID: 2046863498}
   talking: {fileID: 528812702}
+  angryBackground: {fileID: 1383802773}
+  happyBackground: {fileID: 1106393112}
+  defeatedBackground: {fileID: 1250259944}
 --- !u!1 &1396752090
 GameObject:
   m_ObjectHideFlags: 0
@@ -7203,7 +7255,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2235d20377c3a2341b09f3c5cf213c72, type: 3}
   collectedColor: {r: 0, g: 0, b: 0, a: 1}
   bubbleTimerFillImage: {fileID: 88524084}
-  duration: 45
+  duration: 25
 --- !u!1 &1644119094
 GameObject:
   m_ObjectHideFlags: 0
@@ -9903,7 +9955,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2046863499
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10371,3 +10423,4 @@ SceneRoots:
   - {fileID: 2116882939}
   - {fileID: 1163068074}
   - {fileID: 48515888}
+  - {fileID: 665125332}
