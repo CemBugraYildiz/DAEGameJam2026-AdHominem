@@ -11,7 +11,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Animator playerAnim;
 
-    [SerializeField] private AudioClip jumpClip;
+    // for audio clip
+    [SerializeField] private AudioClip[] jumpClips;
     [SerializeField] private float jumpSoundVolume = 0.5f;
 
     private Rigidbody2D rb;
@@ -108,7 +109,7 @@ public class PlayerMovement : MonoBehaviour
         // for audio clip
         if (SoundFXManager.Instance != null)
         {
-            SoundFXManager.Instance.PlaySoundFXClip(jumpClip, jumpSoundVolume);
+            SoundFXManager.Instance.PlayRandomSoundFXClip(jumpClips, 1f);
         }
     }
 
