@@ -4,7 +4,9 @@ public class SoundFXManager : MonoBehaviour
 {
     public static SoundFXManager Instance;
 
-    [SerializeField] private AudioSource soundFXObject;
+    [SerializeField] public GameObject soundPrefab;
+    [SerializeField] private AudioClip testClip;
+
 
     private void Awake()
     {
@@ -12,12 +14,20 @@ public class SoundFXManager : MonoBehaviour
         {
             Instance = this;
         }
+
+    }
+    [ContextMenu("Test Play Sound")]
+    public void TestPlaySound()
+    {
+        PlaySoundFXClip(testClip, 1);
     }
 
     public void PlaySoundFXClip(AudioClip audioClip, float volume)
     {
         // spawn gameObject
-        AudioSource audioSource = Instantiate(soundFXObject, transform.position, Quaternion.identity);
+        GameObject obj = Instantiate(soundPrefab, transform.position, Quaternion.identity);
+
+        AudioSource audioSource = obj.GetComponent<AudioSource>();
 
         // assign audioClip
         audioSource.clip = audioClip;
@@ -32,7 +42,7 @@ public class SoundFXManager : MonoBehaviour
         float clipLength = audioSource.clip.length;
 
         // destroy the clip after it's done playing
-        Destroy(audioSource.gameObject, clipLength);
+        Destroy(obj, clipLength);
     }
 
     public void PlayRandomSoundFXClip(AudioClip[] audioClip, float volume)
@@ -40,22 +50,7 @@ public class SoundFXManager : MonoBehaviour
         // assign random index
         int rand = Random.Range(0, audioClip.Length);
 
-        // spawn gameObject
-        AudioSource audioSource = Instantiate(soundFXObject, transform.position, Quaternion.identity);
 
-        // assign audioClip
-        audioSource.clip = audioClip[rand];
-
-        // assign volume
-        audioSource.volume = volume;
-
-        // play sound
-        audioSource.Play();
-
-        // get length of soundFX clip
-        float clipLength = audioSource.clip.length;
-
-        // destroy the clip after it's done playing
-        Destroy(audioSource.gameObject, clipLength);
+        PlaySoundFXClip(audioClip[rand], volume);
     }
 }
