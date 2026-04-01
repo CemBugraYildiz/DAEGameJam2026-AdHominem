@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(PlayerInput))]
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float jumpForce = 7f;
@@ -11,19 +12,27 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Animator playerAnim;
 
     private Rigidbody2D rb;
+    private PlayerInput playerInput;
 
     private bool jumpRequested;
     private bool jumpApplied;
+    private bool blockJumpUntilRelease;
 
     private static readonly int IsJumpHash = Animator.StringToHash("IsJump");
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerInput = GetComponent<PlayerInput>();
     }
 
     private void Update()
     {
+        if (blockJumpUntilRelease && !IsOwnSouthHeld())
+        {
+            blockJumpUntilRelease = false;
+        }
+
         bool grounded = IsGrounded();
 
         if (jumpApplied && grounded && rb.linearVelocity.y <= 0.05f)
@@ -34,6 +43,19 @@ public class PlayerMovement : MonoBehaviour
             if (playerAnim != null)
                 playerAnim.SetBool(IsJumpHash, false);
         }
+    }
+
+    private bool IsOwnSouthHeld()
+    {
+        if (playerInput == null) return false;
+
+        foreach (var device in playerInput.devices)
+        {
+            if (device is Gamepad pad && pad.buttonSouth.isPressed)
+                return true;
+        }
+
+        return false;
     }
 
     private bool IsGrounded()
@@ -47,8 +69,18 @@ public class PlayerMovement : MonoBehaviour
         );
     }
 
+    public void BlockJumpUntilRelease()
+    {
+        blockJumpUntilRelease = true;
+        jumpRequested = false;
+
+        if (playerAnim != null)
+            playerAnim.SetBool(IsJumpHash, false);
+    }
+
     public void OnJump(InputValue value)
     {
+        if (blockJumpUntilRelease) return;
         if (!value.isPressed) return;
         if (!IsGrounded()) return;
         if (jumpRequested || jumpApplied) return;

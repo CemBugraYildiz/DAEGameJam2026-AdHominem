@@ -35,9 +35,27 @@
             "id": "4e1281f6-2165-42b6-b335-6682f325687f",
             "actions": [
                 {
+                    "name": "Navigate",
+                    "type": "PassThrough",
+                    "id": "4dd54644-6d17-4e8d-9488-109cd3e7b970",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Submit",
                     "type": "Button",
                     "id": "44523f3d-dfec-4298-898c-5e088d496adc",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Cancel",
+                    "type": "Button",
+                    "id": "56f44962-f30c-491a-82a8-814e3bd88de5",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -51,8 +69,41 @@
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cb81b08a-39d9-42b6-8f63-b8562d435d7c",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4a6b6f45-a15d-4933-831c-7b72dc58466e",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "24813e77-476e-48b0-9b46-8fba6d668c4d",
+                    "path": "<Gamepad>/dpad",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ public class ScoreManager : MonoBehaviour
     //[SerializeField] private TMP_Text goodScoreText;
     //[SerializeField] private TMP_Text badScoreText;
 
+    public static event Action<int, int> OnScoreChanged;
+
     public int GoodScore { get; private set; }
     public int BadScore { get; private set; }
 
@@ -15,6 +18,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
+            Destroy(gameObject);
             return;
         }
 
@@ -35,9 +39,19 @@ public class ScoreManager : MonoBehaviour
             ScoreMeter.Instance?.AddBadBall();
         }
 
+        OnScoreChanged?.Invoke(GoodScore, BadScore);
+        float balance = ScoreMeter.Instance != null ? ScoreMeter.Instance.GetCurrentValue() : 0f;
+
         //UpdateUI();
         Debug.Log($"Good: {GoodScore} | Bad: {BadScore} | Balance: {ScoreMeter.Instance.GetCurrentValue()}");
 
+    }
+
+    public void ResetScores()
+    {
+        GoodScore = 0;
+        BadScore = 0;
+        OnScoreChanged?.Invoke(GoodScore, BadScore);
     }
 
     //private void UpdateUI()

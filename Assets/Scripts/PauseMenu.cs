@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject firstSelectedButton;
     [SerializeField] private PlayerInput[] playerInputs;
+    [SerializeField] private MainMenuController mainMenuController;
 
     private bool isPaused;
     private bool isResuming;
@@ -15,11 +16,13 @@ public class PauseMenu : MonoBehaviour
     private void Start()
     {
         pausePanel.SetActive(false);
-        Time.timeScale = 1f;
     }
 
     private void Update()
     {
+        if (mainMenuController != null && mainMenuController.IsMainMenuOpen)
+            return;
+
         if (!isPaused && AnyPlayerPressedPause())
         {
             PauseGame();
