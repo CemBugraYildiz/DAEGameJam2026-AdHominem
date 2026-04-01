@@ -11,6 +11,10 @@ public class PooledBall : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Color badBallColor = Color.black;
 
+    // for audio clip
+    [SerializeField] private AudioClip[] ballClips;
+    [SerializeField] private float ballSoundVolume = 1f;
+
     private BallPoolSpawner ownerPool;
     private float moveSpeed;
     private Vector3 moveDirection;
@@ -82,6 +86,13 @@ public class PooledBall : MonoBehaviour
             {
                 Debug.Log($"{player.Color} player collected GOOD ball");
                 ScoreManager.Instance.AddScore(BallKind.Good);
+
+                // for audio clip
+                if (SoundFXManager.Instance != null)
+                {
+                    SoundFXManager.Instance.PlayRandomSoundFXClip(ballClips, ballSoundVolume);
+                }
+
                 ReturnToPool();
             }
 
