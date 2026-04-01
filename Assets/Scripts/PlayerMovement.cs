@@ -11,6 +11,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Animator playerAnim;
 
+    // for audio clip
+    [SerializeField] private AudioClip jumpClip;
+    [SerializeField] private float jumpSoundVolume = 0.5f;
+
     private Rigidbody2D rb;
     private PlayerInput playerInput;
 
@@ -101,6 +105,12 @@ public class PlayerMovement : MonoBehaviour
 
         jumpApplied = true;
         jumpRequested = false;
+
+        // for audio clip
+        if (SoundFXManager.Instance != null)
+        {
+            SoundFXManager.Instance.PlaySoundFXClip(jumpClip, jumpSoundVolume);
+        }
     }
 
     private void OnDrawGizmosSelected()
