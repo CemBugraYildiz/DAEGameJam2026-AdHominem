@@ -1,0 +1,780 @@
+fileFormatVersion: 2
+guid: e7927961a930b644d9bc5b0f8ed9066d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7177184154681254453
+    second: ReactionHappy_0
+  - first:
+      213: -7964620988539822976
+    second: ReactionHappy_1
+  - first:
+      213: -6765707056830248471
+    second: ReactionHappy_2
+  - first:
+      213: -7682319847364241177
+    second: ReactionHappy_3
+  - first:
+      213: -4184806333590702583
+    second: ReactionHappy_4
+  - first:
+      213: -4674577568326853915
+    second: ReactionHappy_5
+  - first:
+      213: -2322910999176030880
+    second: ReactionHappy_6
+  - first:
+      213: -4481119239812010278
+    second: ReactionHappy_7
+  - first:
+      213: -7242038369996993765
+    second: ReactionHappy_8
+  - first:
+      213: -1466214262220395909
+    second: ReactionHappy_9
+  - first:
+      213: 7226880781660870689
+    second: ReactionHappy_10
+  - first:
+      213: 1969749071383448547
+    second: ReactionHappy_11
+  - first:
+      213: -5153930537289951913
+    second: ReactionHappy_12
+  - first:
+      213: 8666708577632218973
+    second: ReactionHappy_13
+  - first:
+      213: -3309500878541162
+    second: ReactionHappy_14
+  - first:
+      213: 1727892410584774037
+    second: ReactionHappy_15
+  - first:
+      213: -1129479248187426899
+    second: ReactionHappy_16
+  - first:
+      213: -8582825998667928467
+    second: ReactionHappy_17
+  - first:
+      213: 9160186859493277167
+    second: ReactionHappy_18
+  - first:
+      213: 464997773733251710
+    second: ReactionHappy_19
+  - first:
+      213: -6887472233632838517
+    second: ReactionHappy_20
+  - first:
+      213: -8826517385337305589
+    second: ReactionHappy_21
+  - first:
+      213: -490991051141825713
+    second: ReactionHappy_22
+  - first:
+      213: -6510841812541894494
+    second: ReactionHappy_23
+  - first:
+      213: -945647651414182365
+    second: ReactionHappy_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ReactionHappy_0
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 448
+        width: 109
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcd59a4a905856c90800000000000000
+      internalID: -7177184154681254453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReactionHappy_1
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 486
+        width: 70
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08c9677c86bf77190800000000000000
+      internalID: -7964620988539822976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReactionHappy_2
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 491
+        width: 59
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e9874f27416b12a0800000000000000
+      internalID: -6765707056830248471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReactionHappy_3
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 457
+        width: 137
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e8dbee2dcae26590800000000000000
+      internalID: -7682319847364241177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReactionHappy_4
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 458
+        width: 97
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9067588cfc49ce5c0800000000000000
+      internalID: -4184806333590702583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReactionHappy_5
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 442
+        width: 157
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ea5ed4f770902fb0800000000000000
+      internalID: -4674577568326853915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReactionHappy_6
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 461
+        width: 114
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 065d349e0cc53cfd0800000000000000
+      internalID: -2322910999176030880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReactionHappy_7
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 469
+        width: 75
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ade26da1bcddfc1c0800000000000000
+      internalID: -4481119239812010278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReactionHappy_8
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 477
+        width: 53
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1b8492f87c1f7b90800000000000000
+      internalID: -7242038369996993765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReactionHappy_9
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 494
+        width: 44
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7aedb795e5f6abe0800000000000000
+      internalID: -1466214262220395909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReactionHappy_10
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 438
+        width: 32
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1285ef008c90b4460800000000000000
+      internalID: 7226880781660870689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReactionHappy_11
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 443
+        width: 54
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eb47702854f55b10800000000000000
+      internalID: 1969749071383448547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReactionHappy_12
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 431
+        width: 23
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7555bc7ab7f8978b0800000000000000
+      internalID: -5153930537289951913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReactionHappy_13
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 374
+        width: 64
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5f699d7885564870800000000000000
+      internalID: 8666708577632218973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReactionHappy_14
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 384
+        width: 42
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69e20c7c60e34fff0800000000000000
+      internalID: -3309500878541162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReactionHappy_15
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 368
+        width: 39
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 595bffe1ef4baf710800000000000000
+      internalID: 1727892410584774037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReactionHappy_16
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 335
+        width: 28
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da7fc96ab984350f0800000000000000
+      internalID: -1129479248187426899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReactionHappy_17
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 311
+        width: 54
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6c296c5a3da3e880800000000000000
+      internalID: -8582825998667928467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReactionHappy_18
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 321
+        width: 42
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fed3c4c7a658f1f70800000000000000
+      internalID: 9160186859493277167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReactionHappy_19
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 58
+        width: 240
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7ac7b4f201047600800000000000000
+      internalID: 464997773733251710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReactionHappy_20
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 157
+        width: 225
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8cc2f1be78ca60a0800000000000000
+      internalID: -6887472233632838517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReactionHappy_21
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 63
+        width: 203
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b060923f339e18580800000000000000
+      internalID: -8826517385337305589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReactionHappy_22
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 100
+        width: 182
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4bbbc88d36af29f0800000000000000
+      internalID: -490991051141825713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReactionHappy_23
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 68
+        width: 108
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a01eae0ed7d4a5a0800000000000000
+      internalID: -6510841812541894494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReactionHappy_24
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 99
+        width: 74
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32676c6a87260e2f0800000000000000
+      internalID: -945647651414182365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ReactionHappy_0: -7177184154681254453
+      ReactionHappy_1: -7964620988539822976
+      ReactionHappy_10: 7226880781660870689
+      ReactionHappy_11: 1969749071383448547
+      ReactionHappy_12: -5153930537289951913
+      ReactionHappy_13: 8666708577632218973
+      ReactionHappy_14: -3309500878541162
+      ReactionHappy_15: 1727892410584774037
+      ReactionHappy_16: -1129479248187426899
+      ReactionHappy_17: -8582825998667928467
+      ReactionHappy_18: 9160186859493277167
+      ReactionHappy_19: 464997773733251710
+      ReactionHappy_2: -6765707056830248471
+      ReactionHappy_20: -6887472233632838517
+      ReactionHappy_21: -8826517385337305589
+      ReactionHappy_22: -490991051141825713
+      ReactionHappy_23: -6510841812541894494
+      ReactionHappy_24: -945647651414182365
+      ReactionHappy_3: -7682319847364241177
+      ReactionHappy_4: -4184806333590702583
+      ReactionHappy_5: -4674577568326853915
+      ReactionHappy_6: -2322910999176030880
+      ReactionHappy_7: -4481119239812010278
+      ReactionHappy_8: -7242038369996993765
+      ReactionHappy_9: -1466214262220395909
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
