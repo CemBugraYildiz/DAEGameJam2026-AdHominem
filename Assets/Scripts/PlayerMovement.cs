@@ -109,7 +109,7 @@ public class PlayerMovement : MonoBehaviour
         // for audio clip
         if (SoundFXManager.Instance != null)
         {
-            SoundFXManager.Instance.PlayRandomSoundFXClip(jumpClips, 1f);
+            SoundFXManager.Instance.PlayRandomSoundFXClip(jumpClips, jumpSoundVolume);
         }
     }
 
