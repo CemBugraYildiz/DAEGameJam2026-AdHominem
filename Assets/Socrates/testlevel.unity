@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 368213406}
   - component: {fileID: 368213405}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: TestSoundObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundFXManager
   soundPrefab: {fileID: 2389947948560364767, guid: ef7562b9c47c0c049989c70afa7be5e5, type: 3}
-  testClip: {fileID: 8300000, guid: 5eb2ddc0332f928499cb71786a4c362c, type: 3}
+  testClip: {fileID: 8300000, guid: 10e151f40e47b1644a4d3342b804bc75, type: 3}
 --- !u!4 &368213406
 Transform:
   m_ObjectHideFlags: 0
