@@ -7,6 +7,9 @@ public class JumpObstacle : MonoBehaviour
     private Vector3 moveDirection;
     private bool isActive;
 
+    [SerializeField] private AudioClip[] playerhitClips;
+    [SerializeField] private float playerhitSoundVolume = 1f;
+
     public void Initialize(JumpObstacleSpawner pool)
     {
         ownerPool = pool;
@@ -47,6 +50,12 @@ public class JumpObstacle : MonoBehaviour
 
         if (!player.IsJoined)
             return;
+
+        if (SoundFXManager.Instance != null)
+        {
+            SoundFXManager.Instance.PlayRandomSoundFXClip(playerhitClips, playerhitSoundVolume);
+        }
+
 
         GameFlowManager.Instance?.ReportJumpObstacleHit();
         ReturnToPool();
