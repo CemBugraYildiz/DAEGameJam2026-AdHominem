@@ -4610,6 +4610,9 @@ MonoBehaviour:
   collectedColor: {r: 0, g: 0, b: 0, a: 1}
   bubbleTimerFillImage: {fileID: 1377262896}
   duration: 20
+  NPCBubble: 1
+  voiceClips: []
+  voiceSoundVolume: 1
 --- !u!1 &935351996
 GameObject:
   m_ObjectHideFlags: 0
@@ -7270,6 +7273,9 @@ MonoBehaviour:
   collectedColor: {r: 0, g: 0, b: 0, a: 1}
   bubbleTimerFillImage: {fileID: 88524084}
   duration: 25
+  NPCBubble: 0
+  voiceClips: []
+  voiceSoundVolume: 1
 --- !u!1 &1644119094
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,6 +14,10 @@ public class BubbleProgressUI : MonoBehaviour
     [SerializeField] private Image bubbleTimerFillImage;
     [SerializeField] private float duration = 10f;
 
+    [SerializeField] private bool NPCBubble;
+    [SerializeField] private AudioClip[] voiceClips;
+    [SerializeField] private float voiceSoundVolume = 1f;
+
     private Image[] collectedImages;
     private int currentCount;
     private float elapsedTime;
@@ -152,6 +156,8 @@ public class BubbleProgressUI : MonoBehaviour
             img.gameObject.SetActive(false);
 
             collectedImages[i] = img;
+
+            AddNPCSound();
         }
     }
 
@@ -163,5 +169,15 @@ public class BubbleProgressUI : MonoBehaviour
         return textSprites[index % textSprites.Length];
     }
 
+    private void AddNPCSound()
+    {
+        if (!NPCBubble)
+            return;
+
+        if (SoundFXManager.Instance != null)
+        {
+            SoundFXManager.Instance.PlayRandomSoundFXClip(voiceClips, voiceSoundVolume);
+        }
+    }
 
 }
