@@ -4611,8 +4611,12 @@ MonoBehaviour:
   bubbleTimerFillImage: {fileID: 1377262896}
   duration: 20
   NPCBubble: 1
-  voiceClips: []
-  voiceSoundVolume: 1
+  voiceClips:
+  - {fileID: 8300000, guid: 86aad575c3d30fe4687c2075ace6b87a, type: 3}
+  - {fileID: 8300000, guid: 4510cd6c1d8573e4ba636256251e41a3, type: 3}
+  - {fileID: 8300000, guid: f60cc30ae5692ab48b3ca9ebe5622ef9, type: 3}
+  - {fileID: 8300000, guid: 107f0aad300de724fb4475b123c8670e, type: 3}
+  voiceSoundVolume: 0.5
 --- !u!1 &935351996
 GameObject:
   m_ObjectHideFlags: 0
