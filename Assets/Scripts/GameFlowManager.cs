@@ -169,6 +169,11 @@ public class GameFlowManager : MonoBehaviour
         if (expressionController != null)
             expressionController.Show(preJumpExpression);
 
+        if (SoundFXManager.Instance != null)
+        {
+            SoundFXManager.Instance.PlayRandomSoundFXClip(npchurtClips, npchurtSoundVolume);
+        }
+
         yield return new WaitForSeconds(hurtExpressionDuration);
 
         if (currentPhase == GamePhase.Ended)
@@ -233,10 +238,6 @@ public class GameFlowManager : MonoBehaviour
         if (currentPhase != GamePhase.BallCollect)
             return;
 
-        if (SoundFXManager.Instance != null)
-        {
-            SoundFXManager.Instance.PlayRandomSoundFXClip(npchurtClips, npchurtSoundVolume);
-        }
 
 
         StartCoroutine(BeginJumpPhaseRoutine(ExpressionState.Hurt));
