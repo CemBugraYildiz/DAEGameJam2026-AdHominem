@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: be26bce4c66a81c42ad393610ade3b11
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -939606180677481827
+    second: new controller white_0
+  - first:
+      213: 4172133922626894729
+    second: new controller white_1
+  - first:
+      213: 578229860712522594
+    second: new controller white_2
+  - first:
+      213: -5679565950549970065
+    second: new controller white_3
+  - first:
+      213: -5311871265763532004
+    second: new controller white_4
+  - first:
+      213: 4718289569923398174
+    second: new controller white_5
+  - first:
+      213: 1983445215698773438
+    second: new controller white_6
+  - first:
+      213: 1392198491693431981
+    second: new controller white_7
+  - first:
+      213: -6897043673816772786
+    second: new controller white_8
+  - first:
+      213: -4653652441706808229
+    second: new controller white_9
+  - first:
+      213: -4829810386185985306
+    second: new controller white_10
+  - first:
+      213: -3659018151326252703
+    second: new controller white_11
+  - first:
+      213: 8209317992200889793
+    second: new controller white_12
+  - first:
+      213: 3415165744721761590
+    second: new controller white_13
+  - first:
+      213: -5677536584147681518
+    second: new controller white_14
+  - first:
+      213: 8123986166746815204
+    second: new controller white_15
+  - first:
+      213: -3727776287883786914
+    second: new controller white_16
+  - first:
+      213: -1008522285408208859
+    second: new controller white_17
+  - first:
+      213: 3403879354339235781
+    second: new controller white_18
+  - first:
+      213: -1199288151888334647
+    second: new controller white_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: new controller white_0
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 514
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9a05fb2829d5f2f0800000000000000
+      internalID: -939606180677481827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: new controller white_1
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 514
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98b788d92b566e930800000000000000
+      internalID: 4172133922626894729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: new controller white_2
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 513
+        width: 29
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2632b46aef8460800800000000000000
+      internalID: 578229860712522594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: new controller white_3
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 514
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f63b01f0cd02e21b0800000000000000
+      internalID: -5679565950549970065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: new controller white_4
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 368
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c136f8f2a317846b0800000000000000
+      internalID: -5311871265763532004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: new controller white_5
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 368
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1af6b28d5bba7140800000000000000
+      internalID: 4718289569923398174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: new controller white_6
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 367
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb56c293aec968b10800000000000000
+      internalID: 1983445215698773438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: new controller white_7
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 368
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dacb83ae625125310800000000000000
+      internalID: 1392198491693431981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: new controller white_8
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 368
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4fcbcd1257c840a0800000000000000
+      internalID: -6897043673816772786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: new controller white_9
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 368
+        width: 28
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5cbfe7a2c7ea6fb0800000000000000
+      internalID: -4653652441706808229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: new controller white_10
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 77
+        width: 674
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e264ee0b0119fcb0800000000000000
+      internalID: -4829810386185985306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: new controller white_11
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 348
+        width: 39
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1610e7fa06e883dc0800000000000000
+      internalID: -3659018151326252703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: new controller white_12
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 348
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c56b55183b5de170800000000000000
+      internalID: 8209317992200889793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: new controller white_13
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 348
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6351937862b156f20800000000000000
+      internalID: 3415165744721761590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: new controller white_14
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 348
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21fb79ebe865531b0800000000000000
+      internalID: -5677536584147681518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: new controller white_15
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 348
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ea912d30623eb070800000000000000
+      internalID: 8123986166746815204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: new controller white_16
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 343
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e55009e7737444cc0800000000000000
+      internalID: -3727776287883786914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: new controller white_17
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 343
+        width: 40
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 528bd2623520102f0800000000000000
+      internalID: -1008522285408208859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: new controller white_18
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 306
+        width: 69
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c71dadfc320d3f20800000000000000
+      internalID: 3403879354339235781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: new controller white_19
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 306
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c07c5ba7c54b5fe0800000000000000
+      internalID: -1199288151888334647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      new controller white_0: -939606180677481827
+      new controller white_1: 4172133922626894729
+      new controller white_10: -4829810386185985306
+      new controller white_11: -3659018151326252703
+      new controller white_12: 8209317992200889793
+      new controller white_13: 3415165744721761590
+      new controller white_14: -5677536584147681518
+      new controller white_15: 8123986166746815204
+      new controller white_16: -3727776287883786914
+      new controller white_17: -1008522285408208859
+      new controller white_18: 3403879354339235781
+      new controller white_19: -1199288151888334647
+      new controller white_2: 578229860712522594
+      new controller white_3: -5679565950549970065
+      new controller white_4: -5311871265763532004
+      new controller white_5: 4718289569923398174
+      new controller white_6: 1983445215698773438
+      new controller white_7: 1392198491693431981
+      new controller white_8: -6897043673816772786
+      new controller white_9: -4653652441706808229
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
