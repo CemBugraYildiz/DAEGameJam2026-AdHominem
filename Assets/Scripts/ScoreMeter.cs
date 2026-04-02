@@ -48,12 +48,12 @@ public class ScoreMeter : MonoBehaviour
 
     public void AddGoodBall()
     {
-        targetValue = Mathf.Clamp(targetValue + goodValuePerBall, minValue, maxValue);
+        AddReward(goodValuePerBall);
     }
 
     public void AddBadBall()
     {
-        targetValue = Mathf.Clamp(targetValue - badValuePerBall, minValue, maxValue);
+        AddPenalty(badValuePerBall);
     }
 
     private void UpdateVisuals()
@@ -109,5 +109,20 @@ public class ScoreMeter : MonoBehaviour
         currentValue = 0f;
         targetValue = 0f;
         UpdateVisuals();
+    }
+
+    public void AddValue(float amount)
+    {
+        targetValue = Mathf.Clamp(targetValue + amount, minValue, maxValue);
+    }
+
+    public void AddPenalty(float amount)
+    {
+        targetValue = Mathf.Clamp(targetValue - Mathf.Abs(amount), minValue, maxValue);
+    }
+
+    public void AddReward(float amount)
+    {
+        targetValue = Mathf.Clamp(targetValue + Mathf.Abs(amount), minValue, maxValue);
     }
 }

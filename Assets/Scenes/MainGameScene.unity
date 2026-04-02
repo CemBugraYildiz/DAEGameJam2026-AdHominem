@@ -215,7 +215,7 @@ MonoBehaviour:
   targetMoveSpeed: 8
   targetMinSpawnDelay: 0.25
   targetMaxSpawnDelay: 0.6
-  difficultyRampDuration: 60
+  difficultyRampDuration: 80
   goodBallChance: 0.65
   initialGoodBallCount: 15
   initialBadBallCount: 15
@@ -1764,6 +1764,7 @@ MonoBehaviour:
   - {fileID: 1154688117}
   - {fileID: 218061766}
   - {fileID: 802819792}
+  jumpObstaclePenalty: 10
 --- !u!1 &363604590
 GameObject:
   m_ObjectHideFlags: 0
@@ -2990,8 +2991,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 189}
-  m_SizeDelta: {x: 371.69, y: 130.8}
+  m_AnchoredPosition: {x: 0, y: 165.5}
+  m_SizeDelta: {x: 511.6, y: 130.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &592734388
 MonoBehaviour:
@@ -4345,7 +4346,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &804994474
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4615,7 +4616,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &935351997
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5345,8 +5346,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 520, y: 133.6}
-  m_SizeDelta: {x: 804.2, y: 673.9}
+  m_AnchoredPosition: {x: 527, y: 133.6}
+  m_SizeDelta: {x: 657.93, y: 531.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1106393114
 MonoBehaviour:
@@ -5658,7 +5659,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6e4328cc30f8e2e429bf0da0d2acedf1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 929131ef57f1c2f4e994f12267e60837, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5805,7 +5806,7 @@ MonoBehaviour:
   targetMoveSpeed: 8
   targetMinSpawnDelay: 0.4
   targetMaxSpawnDelay: 1
-  difficultyRampDuration: 60
+  difficultyRampDuration: 80
   initialCount: 10
 --- !u!1 &1237003145
 GameObject:
@@ -5863,7 +5864,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1250259945
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5880,8 +5881,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 520, y: 133.6}
-  m_SizeDelta: {x: 804.2, y: 673.9}
+  m_AnchoredPosition: {x: 536, y: 136}
+  m_SizeDelta: {x: 647.4, y: 590.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1250259946
 MonoBehaviour:
@@ -8093,8 +8094,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 36, y: -122}
-  m_SizeDelta: {x: 371.69, y: 130.8}
+  m_AnchoredPosition: {x: 36, y: -252}
+  m_SizeDelta: {x: 518.1, y: 149}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1748034212
 MonoBehaviour:
@@ -9375,8 +9376,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -39, y: 28}
-  m_SizeDelta: {x: 371.69, y: 130.8}
+  m_AnchoredPosition: {x: -39, y: -52}
+  m_SizeDelta: {x: 545.2, y: 152.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1934137343
 MonoBehaviour:

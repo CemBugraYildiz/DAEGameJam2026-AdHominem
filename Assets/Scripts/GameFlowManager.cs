@@ -42,6 +42,9 @@ public class GameFlowManager : MonoBehaviour
     [Header("Players")]
     [SerializeField] private PlayerInput[] playerInputs;
 
+    [Header("Jump Mini Game")]
+    [SerializeField] private float jumpObstaclePenalty = 6f;
+
     private GamePhase currentPhase;
 
     private void Awake()
@@ -271,7 +274,7 @@ public class GameFlowManager : MonoBehaviour
         if (currentPhase != GamePhase.JumpMiniGame)
             return;
 
-        ScoreMeter.Instance?.AddBadBall();
+        ScoreMeter.Instance?.AddPenalty(jumpObstaclePenalty);
         npcBubble?.AddStep();
 
         if (ScoreMeter.Instance != null && ScoreMeter.Instance.IsAtMin())
