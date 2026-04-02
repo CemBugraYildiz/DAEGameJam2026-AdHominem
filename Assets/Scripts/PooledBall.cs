@@ -109,7 +109,7 @@ public class PooledBall : MonoBehaviour
 
             if (SoundFXManager.Instance != null)
             {
-                SoundFXManager.Instance.PlayRandomSoundFXClip(badideaClips, badidealSoundVolume);
+                SoundFXManager.Instance.PlayRandomSoundFXClip(badideaClips, badideaSoundVolume);
             }
 
 
