@@ -173,3 +173,8 @@ MonoBehaviour:
   badBallColor: {r: 0.58013517, g: 0.54449975, b: 0.6075471, a: 1}
   ballClips: []
   ballSoundVolume: 1
+  badideaClips:
+  - {fileID: 8300000, guid: 58166b075588fa943b7d87e6e0c36312, type: 3}
+  - {fileID: 8300000, guid: 45ee919ad3d5e2d48b0e24656b262a64, type: 3}
+  - {fileID: 8300000, guid: 7c4dd1335c42b104cade1d8b8d7f8918, type: 3}
+  badideaSoundVolume: 1
