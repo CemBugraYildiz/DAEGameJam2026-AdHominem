@@ -192,4 +192,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0b716ee689158a5438c6137bfb8b9c6d, type: 3}
   - {fileID: 8300000, guid: 77c94bc32b986554a83bf9ef5ebbd996, type: 3}
   - {fileID: 8300000, guid: 26f0a70ad36cc7b4b914fb5b2e63b448, type: 3}
-  playerhitSoundVolume: 1
+  playerhitSoundVolume: 0.4

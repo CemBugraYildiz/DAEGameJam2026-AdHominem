@@ -169,10 +169,7 @@ public class GameFlowManager : MonoBehaviour
         if (expressionController != null)
             expressionController.Show(preJumpExpression);
 
-        if (SoundFXManager.Instance != null)
-        {
-            SoundFXManager.Instance.PlayRandomSoundFXClip(npchurtClips, npchurtSoundVolume);
-        }
+
 
         yield return new WaitForSeconds(hurtExpressionDuration);
 
@@ -255,6 +252,10 @@ public class GameFlowManager : MonoBehaviour
 
         if (bubble.HasHalfOrMoreFilled())
         {
+            if (SoundFXManager.Instance != null)
+            {
+                SoundFXManager.Instance.PlayRandomSoundFXClip(npchurtClips, npchurtSoundVolume);
+            }
             nextExpression = ExpressionState.Hurt;
         }
         else
