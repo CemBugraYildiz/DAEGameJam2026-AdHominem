@@ -114,6 +114,7 @@ public class BubbleProgressUI : MonoBehaviour
             collectedImages[currentCount].gameObject.SetActive(true);
 
         currentCount++;
+        AddNPCSound();
 
         if (IsFull)
         {
@@ -157,7 +158,6 @@ public class BubbleProgressUI : MonoBehaviour
 
             collectedImages[i] = img;
 
-            AddNPCSound();
         }
     }
 
