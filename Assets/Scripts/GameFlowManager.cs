@@ -45,6 +45,11 @@ public class GameFlowManager : MonoBehaviour
     [Header("Jump Mini Game")]
     [SerializeField] private float jumpObstaclePenalty = 6f;
 
+    [SerializeField] private AudioClip[] npchurtClips;
+    [SerializeField] private float npchurtSoundVolume = 1f;
+    [SerializeField] private AudioClip[] npcnotimpressedClips;
+    [SerializeField] private float npcnotimpressedSoundVolume = 1f;
+
     private GamePhase currentPhase;
 
     private void Awake()
@@ -228,6 +233,12 @@ public class GameFlowManager : MonoBehaviour
         if (currentPhase != GamePhase.BallCollect)
             return;
 
+        if (SoundFXManager.Instance != null)
+        {
+            SoundFXManager.Instance.PlayRandomSoundFXClip(npchurtClips, npchurtSoundVolume);
+        }
+
+
         StartCoroutine(BeginJumpPhaseRoutine(ExpressionState.Hurt));
     }
 
@@ -239,10 +250,20 @@ public class GameFlowManager : MonoBehaviour
         if (bubble == null)
             return;
 
-        ExpressionState nextExpression =
-            bubble.HasHalfOrMoreFilled()
-            ? ExpressionState.Hurt
-            : ExpressionState.NotHurt;
+        ExpressionState nextExpression;
+
+        if (bubble.HasHalfOrMoreFilled())
+        {
+            nextExpression = ExpressionState.Hurt;
+        }
+        else
+        {
+            if (SoundFXManager.Instance != null)
+            {
+                SoundFXManager.Instance.PlayRandomSoundFXClip(npcnotimpressedClips, npcnotimpressedSoundVolume);
+            }
+            nextExpression = ExpressionState.NotHurt;
+        }
 
         StartCoroutine(BeginJumpPhaseRoutine(nextExpression));
     }
