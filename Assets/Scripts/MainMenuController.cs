@@ -10,7 +10,7 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private GameObject mainMenuPanel;
     [SerializeField] private GameObject buttonsRoot;
     [SerializeField] private GameObject backgroundToHide;
-    [SerializeField] private GameObject controlsPanel;
+    [SerializeField] private GameObject[] controlsPanels;
 
     [Header("First Selection")]
     [SerializeField] private Selectable startButton;
@@ -51,7 +51,8 @@ public class MainMenuController : MonoBehaviour
         if (backgroundToHide != null)
             backgroundToHide.SetActive(true);
 
-        controlsPanel.SetActive(false);
+        controlsPanels[0].SetActive(false);
+        controlsPanels[1].SetActive(false);
         controlsOpen = false;
 
         StartCoroutine(SelectStartButtonNextFrame());
@@ -94,7 +95,8 @@ public class MainMenuController : MonoBehaviour
         if (backgroundToHide != null)
             backgroundToHide.SetActive(false);
 
-        controlsPanel.SetActive(true);
+        controlsPanels[0].SetActive(true);
+        controlsPanels[1].SetActive(true);
         controlsOpen = true;
 
         EventSystem.current.SetSelectedGameObject(null);
@@ -102,7 +104,8 @@ public class MainMenuController : MonoBehaviour
 
     public void BackFromControls()
     {
-        controlsPanel.SetActive(false);
+        controlsPanels[0].SetActive(false);
+        controlsPanels[1].SetActive(false);
 
         if (backgroundToHide != null)
             backgroundToHide.SetActive(true);
